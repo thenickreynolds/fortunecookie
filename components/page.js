@@ -4,7 +4,19 @@ import styles from '../styles/Home.module.css'
 
 export default function Page({ name, fortune, lucky_numbers }) {
   let [showFortune, setShowFortune] = useState(false);
+
   let fortuneStyle = {visibility: showFortune ? '' : 'hidden', opacity: showFortune ? 1.0 : 0 };
+  let cookieImage = showFortune ? "/cookie_cracked.png" : "/cookie_uncracked.png";
+
+  let audioForward = process.browser ? new Audio("/thatshowthecookiecrumbles.mp3") : null;
+  let audioBackward = process.browser ? new Audio("/crumblescookiethehowthats.mp3") : null;
+  
+  let toggleFortune = () => {
+    let newShowFortune = !showFortune;
+    let audio = newShowFortune ? audioForward : audioBackward;
+    audio.play();
+    setShowFortune(newShowFortune);
+  }
 
   return (
     <div className={styles.container}>
@@ -24,9 +36,7 @@ export default function Page({ name, fortune, lucky_numbers }) {
           Happy Fortune <br /> {name}
         </h1>
 
-        <div className={styles.cookie} onClick={() => setShowFortune(!showFortune)}>
-           🥠
-        </div>
+        <img src={cookieImage} className={styles.cookie} onClick={toggleFortune} />
 
         <div className={styles.fortune}>
             <div className={styles.fortune_text} style={fortuneStyle}>{fortune}</div>

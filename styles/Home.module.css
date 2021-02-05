@@ -37,7 +37,8 @@
 
 .cookie {
   font-size: 140pt;
-  padding-top: 40px;
+  max-width: 400px;
+  padding: 40px;
   cursor: pointer;
   user-select: none;
 }
@@ -53,12 +54,13 @@
 }
 
 .fortune_text {
-  transition:visibility 0.3s linear,opacity 0.3s linear;
+  transition:visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition-delay: 0.25s;
 }
 
 .fortune_numbers {
-  transition:visibility 0.3s linear,opacity 0.3s linear;
-  transition-delay: 0.25s;
+  transition:visibility 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition-delay: 0.5s;
   padding-top: 30px;
 }
 
