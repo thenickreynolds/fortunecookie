@@ -20,7 +20,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Are you <a href="/aaron">Aaron</a> or <a href="/jonathan">Jonathan</a> or <a href="/stranger">a mysterious stranger</a>?
+          Are you <a href="/aaron">Aaron</a>, <a href="/jonathan">Jonathan</a> or <a href="/stranger">a mysterious stranger</a>?
         </p>
         </main>
     </div>
