@@ -1,27 +1,4 @@
-import Page from "../../components/page"
-
-export default function Home() {
-  let number1 = getRandomInt(50);
-  let number2 = getRandomInt(50);
-  let number3 = getRandomInt(50);
-  let number4 = getRandomInt(50);
-  let number5 = getRandomInt(50);
-  let number6 = getRandomInt(50);
-
-  let numbers = `${number1} ${number2} ${number3} ${number4} ${number5} ${number6}`;
-
-  let fortune_num = Math.floor(Math.random() * Math.floor(FORTUNES.length));
-  let fortune = FORTUNES[fortune_num];
-
-  return <Page name="Mysterious Stranger" lucky_numbers={numbers} fortune={fortune} />
-}
-
-function getRandomInt(max) {
-  let num = Math.floor(Math.random() * Math.floor(max));
-  return num <= 9 ? "0" + num : num;
-}
-
-let FORTUNES = [
+const FORTUNES = [
   "A dubious friend may be an enemy in camouflage.",
   "A feather in the hand is better than a bird in the air.",
   "A fresh start will put you on your way.",
@@ -313,3 +290,5 @@ let FORTUNES = [
   "You will find happiness with a new love.",
   "Stick with your wife.  ",
 ];
+
+export default FORTUNES;
